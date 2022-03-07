@@ -57,6 +57,23 @@ document.addEventListener('click', (e) => {
     }
 });
 
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    e.target.setAttribute('contenteditable', 'true');
+    e.target.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            let todos = JSON.parse(localStorage.getItem('todos'));
+            todos.push(e.target.innerHTML);
+            localStorage.setItem('todos', JSON.stringify(todos));
+
+            console.log(JSON.parse(localStorage.getItem('todos')), 'test test');
+
+            e.target.setAttribute('contenteditable', 'false');
+        }
+    });
+    e.target.setAttribute('contenteditable', 'true');
+});
+
 document.addEventListener('dblclick', (e) => {
     let todos;
     if (e.target.hasAttribute('data-finished-item')) {
