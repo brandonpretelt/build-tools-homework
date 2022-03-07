@@ -4,6 +4,7 @@ const todoForm = document.querySelector('form');
 const currentTodos = document.querySelector('.current-todos');
 const finishedTodos = document.querySelector('.finished-todos');
 const userTodo = document.querySelector('#todo');
+const btn = document.querySelector('[data-btn]');
 
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ todoForm.addEventListener('submit', (e) => {
         createTodo.textContent = userTodoInput;
         createTodo.classList.add('todo-item');
         currentTodos.append(createTodo);
+
         if (localStorage.getItem('todos') === null) {
             todos = [];
         } else {
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const loadItems = () => {
     const todos = JSON.parse(localStorage.getItem('todos'));
+
     todos.forEach((todo) => {
         const div = document.createElement('div');
         div.className = 'todo-item done';

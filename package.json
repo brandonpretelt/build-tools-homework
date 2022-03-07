@@ -25,5 +25,8 @@
         "url-loader": "^4.1.1",
         "webpack": "^5.69.1",
         "webpack-cli": "^4.9.2"
+    },
+    "dependencies": {
+        "localbase": "^0.7.5"
     }
 }
