@@ -7,6 +7,17 @@
     margin: 0;
 }
 
+figure {
+    width: 10vw;
+    margin: 0 auto;
+    padding: var(--size-2);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
 :root {
     --font-clr-100: var(--gray-0);
     --btn-clr-primary: var(--yellow-6);
@@ -17,6 +28,10 @@ body {
     background-color: var(--gray-2);
     font-family: var(--font-sans);
     text-align: center;
+}
+
+main {
+    padding: var(--size-4);
 }
 
 .container {
